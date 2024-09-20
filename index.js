@@ -97,6 +97,7 @@ startTimer()
     const success = new Audio('./audio/Long Chime Sound - QuickSounds.com.mp3');
     const finis = new Audio('./audio/Wish You Merry Christmas - QuickSounds.com.mp3');
     const resetSound = new Audio('./audio/rest.mp3');
+    boxCards.innerHTML = "";
     array.forEach(function (item) {
 
         boxCards.innerHTML += `
@@ -176,12 +177,17 @@ startTimer()
         }));
 
         reset.addEventListener("click",()=>{
-            cardInner.forEach(item => item.style.transform = "rotateY(0deg)")
+            cardInner.forEach(item => item.style.transform = "rotateY(0deg)");
+            cardInner.forEach(item =>  item.style.opacity = "1");
+           
             resetSound.play();
             life = 0;
             h2.innerHTML = life;
             resetTimer();
             startTimer();
+            setTimeout(()=>{
+                location.reload();
+            },700)
         })
 
 }
