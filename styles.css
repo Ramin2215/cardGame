@@ -41,7 +41,8 @@ h1,
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 10px;
-    width: 430px;
+    max-width: 40vw;
+   
     margin: 10px auto;
 }
 .reset {
@@ -112,4 +113,13 @@ img {
 
 .card-back {
     transform: rotateY(180deg);
+}
+
+
+
+@media(max-width:768px) {
+    .boxCards {
+        min-width: fit-content;
+        padding: 1px;
+    }
 }
